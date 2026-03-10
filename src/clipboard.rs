@@ -1,13 +1,25 @@
-use std::io::Write;
-use std::process::{Command, Stdio};
+use arboard::Clipboard;
+use std::thread;
+use std::time::Duration;
 
-pub fn clip_copy(text: &str) {
-    match Command::new("clip.exe").stdin(Stdio::piped()).spawn() {
-        Ok(mut process) => {
-            if let Some(input) = process.stdin.as_mut() {
-                let _ = input.write_all(text.as_bytes());
-            }
-        }
-        Err(_) => {}
-    }
+const CLIPBOARD_HOLD_MS: u64 = 300;
+
+pub fn clip_copy(text: &str) -> Result<(), String> {
+    let text = text.to_string();
+
+    let handle = thread::spawn(move || -> Result<(), String> {
+        let mut clipboard = Clipboard::new()
+            .map_err(|e| format!("failed to access clipboard: {e}"))?;
+
+        clipboard
+            .set_text(text)
+            .map_err(|e| format!("failed to copy text to clipboard: {e}"))?;
+
+        thread::sleep(Duration::from_millis(CLIPBOARD_HOLD_MS));
+        Ok(())
+    });
+
+    handle
+        .join()
+        .map_err(|_| "clipboard thread panicked".to_string())?
 }
