@@ -4,6 +4,10 @@ use std::time::Duration;
 
 const CLIPBOARD_HOLD_MS: u64 = 300;
 
+/// Copies `text` to the system clipboard.
+///
+/// The clipboard content is held for a short duration to ensure it is
+/// flushed before the process exits. Returns an error message on failure.
 pub fn clip_copy(text: &str) -> Result<(), String> {
     let text = text.to_string();
 

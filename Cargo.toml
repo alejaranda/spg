@@ -2,6 +2,13 @@
 name = "spg"
 version = "0.1.0"
 edition = "2024"
+authors = ["Alejandro"]
+description = "A fast, simple CLI tool to generate secure passwords"
+repository = "https://github.com/alejaranda/spg"
+license = "MIT"
+keywords = ["password", "generator", "cli", "security"]
+categories = ["command-line-utilities"]
+readme = "README.md"
 
 [dependencies]
 clap = { version = "4.5.47", features = ["derive"] }
