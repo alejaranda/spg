@@ -1,0 +1,16 @@
+{
+  "packages": {
+    ".": {
+      "release-type": "rust",
+      "changelog-sections": [
+        { "type": "feat",     "section": "✨ Features" },
+        { "type": "fix",      "section": "🐛 Bug Fixes" },
+        { "type": "perf",     "section": "⚡ Performance" },
+        { "type": "deps",     "section": "📦 Dependencies" },
+        { "type": "docs",     "section": "📝 Documentation", "hidden": true },
+        { "type": "chore",    "section": "🔧 Miscellaneous",  "hidden": true },
+        { "type": "refactor", "section": "♻️ Refactor",       "hidden": true }
+      ]
+    }
+  }
+}
