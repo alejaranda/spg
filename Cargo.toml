@@ -1,5 +1,5 @@
 [package]
-name = "spg-cli"
+name = "spg"
 version = "0.1.0"
 edition = "2024"
 
