@@ -12,8 +12,8 @@ pub fn clip_copy(text: &str) -> Result<(), String> {
     let text = text.to_string();
 
     let handle = thread::spawn(move || -> Result<(), String> {
-        let mut clipboard = Clipboard::new()
-            .map_err(|e| format!("failed to access clipboard: {e}"))?;
+        let mut clipboard =
+            Clipboard::new().map_err(|e| format!("failed to access clipboard: {e}"))?;
 
         clipboard
             .set_text(text)

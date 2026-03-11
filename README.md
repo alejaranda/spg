@@ -1,6 +1,7 @@
 # spg — Simple Password Generator 🦀
 
 [![CI](https://github.com/alejandro/spg/actions/workflows/ci.yml/badge.svg)](https://github.com/alejandro/spg/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/alejandro/spg)](https://github.com/alejandro/spg/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Rust](https://img.shields.io/badge/rust-stable-orange.svg)](https://www.rust-lang.org)
 
@@ -14,6 +15,26 @@ A fast, minimal CLI tool to generate secure passwords — built in Rust.
 - ⚙️ Configurable length
 
 ## Installation
+
+### Download binary (recommended)
+
+Go to [Releases](https://github.com/alejandro/spg/releases/latest) and download the binary for your platform:
+
+| Platform | File |
+|---|---|
+| Linux x86_64 | `spg-vX.X.X-x86_64-unknown-linux-gnu.tar.gz` |
+| Linux ARM64 | `spg-vX.X.X-aarch64-unknown-linux-gnu.tar.gz` |
+| macOS Intel | `spg-vX.X.X-x86_64-apple-darwin.tar.gz` |
+| macOS Apple Silicon | `spg-vX.X.X-aarch64-apple-darwin.tar.gz` |
+| Windows x86_64 | `spg-vX.X.X-x86_64-pc-windows-msvc.zip` |
+
+Then extract and move the binary to your PATH:
+
+```bash
+# Linux / macOS
+tar -xzf spg-*.tar.gz
+sudo mv spg /usr/local/bin/
+```
 
 ### From source
 
